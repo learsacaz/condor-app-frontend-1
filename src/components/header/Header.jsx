@@ -1,14 +1,15 @@
-import { Card, CardContent, CardMedia, Menu, MenuItem } from '@mui/material';
+import { Card, CardContent, CardMedia, LinearProgress, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import './header.css';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function Header() {
 
   const [menu, setMenu] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const menuOpenIcon = useRef(null)
+  const [progress, setProgress] = useState(0)
 
   const handleClose = (close, e = null) => {
     if (close) {
@@ -21,6 +22,15 @@ function Header() {
       }, 100)
     }
   }
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const maxScrollHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollPosition / maxScrollHeight;
+      setProgress(scrollPercent * 100)
+    })
+  }, [])
 
   return (
     <header>
@@ -36,6 +46,7 @@ function Header() {
             borderRadius: "4px",
             backdropFilter: "blur(30px)",
             background: "rgba(255, 255, 255, 0.1)",
+            width: "210px"
           }}
         >
           <CardMedia
@@ -80,6 +91,7 @@ function Header() {
             </Menu>
           </CardContent>
         </Card>
+        <LinearProgress sx={{ width: "210px" }} variant="determinate" value={progress} />
       </div>
     </header>
   );
