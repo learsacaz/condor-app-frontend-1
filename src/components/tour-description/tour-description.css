@@ -1,0 +1,22 @@
+.tour-description {
+  font-size: 18px;
+  margin-top: 200px;
+  color: #1A1A1A;
+  /* position: sticky;
+  top: 90px; */
+  /* height: 300dvh; */
+}
+
+.tour-description-title {
+  margin-bottom: 15px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.divider {
+  width: 70%;
+  height: 4px;
+  background-color: #4fc0d4;
+  margin: 20px auto;
+}
