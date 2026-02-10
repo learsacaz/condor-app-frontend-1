@@ -14,8 +14,9 @@ header {
   width: 100%;
   max-width: 1200px;
   display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
 }
 
 .hamburger-menu__container {
@@ -35,4 +36,9 @@ span.MuiLinearProgress-bar {
 
 span.MuiLinearProgress-root {
   background-color: #4A6F7F;
+}
+
+.header-button {
+  color: #e6e6e6;
+  cursor: pointer;
 }
