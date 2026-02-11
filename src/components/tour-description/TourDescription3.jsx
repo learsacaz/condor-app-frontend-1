@@ -92,7 +92,7 @@ function TourDescription3({ className }) {
             trigger: card,
             // start: "top 150px",
             start: "top 140px",
-            markers: true,
+            markers: false,
             end: "bottom 0px",
             toggleActions: "restart none none reverse",
             // end: "+=150px",

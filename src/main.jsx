@@ -35,6 +35,7 @@ function App() {
         trigger: section,
         start: "top top",
         end: "bottom top",
+        markers: false,
         snap: {
           snapTo: 1 ,
           duration: 0.5,
