@@ -1,6 +1,6 @@
 import { Card, CardContent, LinearProgress } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import './route-details.css'
+import './tour-description.css'
 // import { useAnimateOnScroll } from "../../utils/useAnimateOnScroll";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -17,7 +17,7 @@ const cardStyles ={
   top: "140px",
   width: "87%",
   maxWidth: "520px",
-  height: "80dvh",
+  height: "calc(100dvh - 200px)",
   border: "none",
   borderRadius: "15px",
   backdropFilter: "blur(7px)",
@@ -35,7 +35,7 @@ const lastCardStyles ={
   top: "140px",
   width: "87%",
   maxWidth: "520px",
-  height: "80dvh",
+  height: "100dvh",
   border: "none",
   borderRadius: "15px",
   backdropFilter: "blur(7px)",
@@ -54,7 +54,7 @@ const loaderStyles = {
   borderRadius: "50px",
 }
 
-function RouteDetails({ className }) {
+function TourDescription3({ className }) {
   const cardsRef = useRef([]);
   const progressRef = useRef([]);
   const [scrollProgress, setScrollProgress] = useState({
@@ -71,11 +71,10 @@ function RouteDetails({ className }) {
     }
   };
 
-  const addProgress = el => {
-  if (el && !progressRef.current.includes(el)) {
-    progressRef.current.push(el);
-  }
-};
+  // const { ref: firstCard, isVisible: isFirstCardVisible } = useAnimateOnScroll();
+  // const { ref: secondCard, isVisible: isSecondCardVisible } = useAnimateOnScroll();
+  // const { ref: thirdCard, isVisible: isThirdCardVisible } = useAnimateOnScroll();
+  // const { ref: fourthCard, isVisible: isFourthCardVisible } = useAnimateOnScroll();
 
   useEffect(() => {
     cardsRef.current.forEach((card, i) => {
@@ -92,7 +91,7 @@ function RouteDetails({ className }) {
           scrollTrigger: {
             trigger: card,
             // start: "top 150px",
-            start: "top 180px",
+            start: "top 140px",
             markers: true,
             end: "bottom 0px",
             toggleActions: "restart none none reverse",
@@ -116,85 +115,33 @@ function RouteDetails({ className }) {
   }, []);
 
   return (
-    <section className={`tour-description ${className}`}>
+    <section className={`tour-description-n ${className}`}>
       <div className="tour-description-container">
         {/* <div className={`loader-container ${isFirstCardVisible ? 'opacity' : ''}`}> */}
-        
+        <div className="loader-container">
+        </div>
         {/* <div className="loader-maxi-container">
         </div> */}
+        <div>
           <Card
             ref={ addCard }
             sx={ cardStyles }
-            className="snap-section"
-            // className={`feature__card ${isFirstCardVisible && !isSecondCardVisible ? 'animate__animated animate__zoomIn' : 'animate__animated animate__zoomOut'}`}
-          >
-            <CardContent sx={ cardContentStyles }>
-              <div className="tour-description-content">
-                <div className="divider"></div>
-                <h3 className='tour-description-title'>Una experiencia que combina innovación, tecnología, desafíos, naturaleza y comunidad ciclista</h3>
-              </div>
-            </CardContent>
-          </Card>
-          <Card
-            ref={ addCard }
-            sx={ cardStyles }
-            className="snap-section"
-            // className={`feature__card ${isFirstCardVisible && !isSecondCardVisible ? 'animate__animated animate__zoomIn' : 'animate__animated animate__zoomOut'}`}
-          >
-            <CardContent sx={ cardContentStyles }>
-              <div className="tour-description-content">
-                <div className="divider"></div>
-                <h3 className='tour-description-title'>Experiencia potenciada por tecnología</h3>
-              </div>
-            </CardContent>
-          </Card>
-          <Card
-            ref={ addCard }
-            sx={ cardStyles}
-            className="snap-section"
-            // className={`feature__card ${isSecondCardVisible && !isThirdCardVisible ? 'animate__animated animate__zoomIn' : 'animate__animated animate__zoomOut'}`}
-          >
-            <CardContent sx={ cardContentStyles }>
-              <div className="tour-description-content">
-                <div className="divider"></div>
-                <h3 className='tour-description-title'>Terrenos épicos </h3>
-              </div>
-            </CardContent>
-          </Card>
-          <Card
-            ref={ addCard }
-            sx={ cardStyles }
-            className="snap-section"
             // className={`feature__card ${isThirdCardVisible && !isFourthCardVisible ? 'animate__animated animate__zoomIn' : 'animate__animated animate__zoomOut'}`}
           >
             <CardContent sx={ cardContentStyles }>
               <div className="tour-description-content">
                 <div className="divider"></div>
-                <h3 className='tour-description-title'>Ambiente de élite y amateur</h3>
+                <h3 className='tour-description-title'>Para todos los niveles</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis possimus, repudiandae alias facere non est quae. Quod, aut at tenetur placeat eius, id ab, reiciendis impedit excepturi maxime quos libero?
+                Fugiat accusamus fuga in sit eveniet ullam animi, vel tempore, excepturi debitis hic cumque nobis sunt sapiente nam ea, provident quia. Delectus voluptates sapiente minima magnam, asperiores vitae aut iure.</p>
               </div>
             </CardContent>
           </Card>
-          <Card
-            ref={ addCard }
-            sx={ cardStyles }
-            className="snap-section"
-            // className={`feature__card ${isFourthCardVisible ? 'animate__animated animate__zoomIn' : 'animate__animated animate__zoomOut'}`}
-          >
-            <CardContent sx={ cardContentStyles }>
-              <div className="tour-description-content">
-                <div className="divider"></div>
-                <h3 className='tour-description-title'>Premios y sorpresas</h3>
-              </div>
-            </CardContent>
-          </Card>
-          <Card
-          className="snap-section"
-            sx={ [lastCardStyles, { transform: "scale(0)", marginBottom: "0px" }] }
-          >
-          </Card>
+          
+        </div>
       </div>
     </section>
   );
 }
 
-export default RouteDetails;
+export default TourDescription3;

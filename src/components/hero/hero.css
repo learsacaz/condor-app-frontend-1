@@ -1,14 +1,14 @@
 .hero {
-  height: calc(100dvh - 75px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 18px;
+  box-sizing: border-box;
 }
 
 .hero-title {
   margin-top: 50px;
-  align-self: left;
+  align-self:flex-end;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
@@ -27,9 +27,6 @@
 }
 
 @media (min-width: 900px) {
-  .hero {
-    padding: 50px 0 50px;
-  }
 
   .hero-title {
     margin-top: 20px;
@@ -39,4 +36,12 @@
   .hero-card-text {
     font-size: 1.5rem;
   }
+}
+
+@media (max-width: 500px) {
+
+  .hero-title {
+    margin-top: 120px;
+  }
+
 }

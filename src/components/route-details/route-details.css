@@ -10,13 +10,14 @@
   /* height: 300dvh; */
 }
 .tour-description-n{
-  min-height: 100vh;
+  height: 100dvh;
   position: relative;
   font-size: 16px;
   color: #1A1A1A;
-}
-.tour-description-container-n{
-  min-height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 200px;
 }
 
 .tour-description-title {

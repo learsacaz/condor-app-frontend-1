@@ -3,6 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import './header.css';
 import { useEffect, useRef, useState } from 'react';
+import logo from '/assets/logos/logotipo_blanco_transparente_1.svg'
 
 function Header() {
 
@@ -53,7 +54,7 @@ function Header() {
             <CardMedia
               component="img"
               height="55"
-              image="/public/assets/logos/logotipo blanco transparente_1.svg"
+              image={logo}
               alt="logotipo"
             />
             <CardContent className='hamburger-menu__container'>

@@ -83,8 +83,8 @@ button:focus-visible {
 
 main {
   width: 100%;
-  max-width: 1200px;
-  margin: 79px auto 0;
+  min-height: 100dvh;
+  max-width: 1920px;
 }
 
 h1 {

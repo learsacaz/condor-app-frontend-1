@@ -1,0 +1,22 @@
+.footer{
+    width: 100vw;
+    background-color: #0a3359;
+    height: 270px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 20px 10px;
+}
+span{
+    color: #4fc0d4;
+}
+small{
+    font-size: 10px;
+}
+.end-footer{
+    margin-top: 20px;
+    width: 360px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

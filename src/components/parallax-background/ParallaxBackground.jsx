@@ -32,7 +32,7 @@ function ParallaxBackground({ children }) {
     updateUrl(currentFrame);
 
     window.addEventListener('scroll', () => {
-      if (Date.now() - lastFrameUpdate < 10) return;
+      if (Date.now() - lastFrameUpdate < 5) return;
       lastFrameUpdate = Date.now();
 
       const scrollPosition = window.scrollY;

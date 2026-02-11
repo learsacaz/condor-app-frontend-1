@@ -2,7 +2,7 @@ import { Card, CardContent } from '@mui/material';
 import './hero.css'
 import { useEffect, useState } from 'react';
 
-function Hero() {
+function Hero({ className }) {
   const [beganScroll, setBeganScroll] = useState(false)
 
   useEffect(() => {
@@ -12,9 +12,9 @@ function Hero() {
   }, [])
 
   return (
-    <section className="hero">
-      <h1 className={`hero-title ${!beganScroll ? 'animate__animated animate__rollIn' : 'animate__animated animate__fadeOutLeft'}`}>Tour del <span className="condor">Condor</span></h1>
-      <div className={`hero-card ${!beganScroll ? 'animate__animated animate__rollIn' : 'animate__animated animate__fadeOutDownBig'}`}>
+    <section className={`hero ${className}`}>
+      <h1 className={`hero-title ${!beganScroll }`}>Tour del <span className="condor">Condor</span></h1>
+      <div className={`hero-card ${!beganScroll }`}>
           <Card
             sx={{
               display: "flex",
@@ -28,8 +28,8 @@ function Hero() {
               boxShadow: "3px 3px 10px 3px rgba(0, 0, 0, 0.5)",
               width: "75%",
               maxWidth: "400px",
-              alignSelf: "right",
-              justifySelf: "end"
+              alignSelf: "left",
+              justifySelf: "start"
             }}
           >
             <CardContent>
